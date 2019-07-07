@@ -24,6 +24,7 @@ const Support = styled.div`
   display: flex;
   justify-content: center;
   border-radius: 50%;
+  cursor: pointer;
 `;
 
 const Menu = styled.div`
