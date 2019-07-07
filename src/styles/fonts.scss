@@ -1,0 +1,25 @@
+$font-path: 'styles/fonts';
+
+@font-face {
+  font-family: "Averta Bold";
+  src: url("#{$font-path}/Averta Bold.otf?") format("eot");
+  src: url('#{$font-path}/Averta Bold.otf?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Averta Extra Bold";
+  src: url("#{$font-path}/Averta Extra Bold.otf?") format("eot");
+  src: url('#{$font-path}/Averta Extra Bold.otf?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MullerBold";
+  src: url("#{$font-path}/MullerBold.otf?") format("eot");
+  src: url('#{$font-path}/MullerBold.otf?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
