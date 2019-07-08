@@ -139,7 +139,6 @@ function Navbar() {
               <SupportImage src={support}/>
             </Support>
           </SupportWrapper>
-
         <Menu>
           <Wrapper>
             <a href="">Ставки</a>
@@ -164,7 +163,11 @@ function Navbar() {
         <BarRight>
           <Social>
             <SocialIconsTelegram/>
+          </Social>
+          <Social>
             <SocialIconsSteam/>
+          </Social>
+          <Social>
             <SocialIconsVk/>
           </Social>
           <DropdownBlock>
