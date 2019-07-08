@@ -15,6 +15,7 @@ const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 90px;
+  }
 `;
 
 const Support = styled.div`
@@ -47,6 +48,13 @@ const Wrapper = styled.div`
 `;
 const Social = styled.div`
   margin-left: 280px;
+  cursor: pointer;
+   @media (max-width: 600px) {
+     height: 120px;
+     padding; 0;
+     margin: 10px 10px 0 0 ;
+     display: flex;
+  }
 `;
 
 function Navbar() {
