@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import avatar from '../../assets/avatar.png';
-import { DepositIcon } from '../../ui/icons/DepositIcon';
+import add from '../../assets/add.svg';
 import { SocialIconsSteamUser } from '../../ui/icons/SocialIcons';
 
 const UserContainer = styled.div`
@@ -11,6 +11,7 @@ const UserContainer = styled.div`
 
 const LoginTrue = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const Avatar = styled.div`
@@ -53,11 +54,11 @@ const Money= styled.div`
 `;
 
 const Deposit= styled.div`
-  width: 45px;
-  height: 45px;
+  width: 29px;
+  height: 29px;
   background: #17c06d;
   border-radius: 50%;
-  margin:3px 0 0 50px;
+  margin:3px 0 0 25px;
   cursor: pointer;
    &:hover {
       background: #68f1ad;
@@ -65,6 +66,14 @@ const Deposit= styled.div`
    @media (max-width: 1200px){
     margin-left: 10px;
   }
+  align-items: center;
+  justify-content: center;
+  display: flex;
+`;
+
+const MoneyImage= styled.img`
+  width: 15px;
+  height: 15px;
 `;
 
 const LoginFalse = styled.div`
@@ -120,7 +129,7 @@ function User() {
             </Money>
           </Userinfo>
           <Deposit>
-            <DepositIcon/>
+            <MoneyImage src={add}/>
           </Deposit>
         </LoginTrue>
       ) : (

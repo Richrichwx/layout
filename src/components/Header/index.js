@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import logo from '../../assets/logo.png';
+import bonuses from '../../assets/bonuses.svg';
+import intuition from '../../assets/intuition.svg';
+import rates from '../../assets/rates.svg';
 import { DotaIcon } from '../../ui/icons/DotaIcon';
-import { BonusesIcon } from '../../ui/icons/BonusesIcon';
-import { IntuitionIcon } from '../../ui/icons/IntuitionIcon';
 import Navbar from '../Navbar';
 import User from '../Users';
-import { RatesIcon } from '../../ui/icons/RatesIcon';
 
 const HeaderContainer = styled.div`
  width: 100%;
@@ -108,6 +108,9 @@ const BonusesWrapper = styled.div`
   @media (max-width: 1389px){
    margin: 0;
   }
+  align-items: center;
+  justify-content: center;
+  display: flex;
 `;
 
 const ContainerInfo = styled.div`
@@ -126,6 +129,11 @@ const BonusesTitle = styled.div`
 const BonusesText = styled.div`
   font-size: 14px;
   color: #92cfec;
+`;
+
+const BonusesImage = styled.img`
+  width: 23px;
+  height: 23px;
 `;
 
 const Intuition = styled.div`
@@ -159,6 +167,9 @@ const IntuitionWrapper = styled.div`
   @media (max-width: 1389px){
    margin: 0;
   }
+  align-items: center;
+  justify-content: center;
+  display: flex;
 `;
 
 const IntuitionTitle = styled.div`
@@ -171,6 +182,12 @@ const IntuitionTitle = styled.div`
 const IntuitionText = styled.div`
   font-size: 14px;
   color: #729dff;
+`;
+
+
+const IntuitionImage = styled.img`
+  width: 29px;
+  height: 29px;
 `;
 
 const UserContainer = styled.div`
@@ -202,30 +219,37 @@ const Rates = styled.div`
      width: 120px;
   }
 `;
-const Wrapper = styled.div`
+const WrapperRates = styled.div`
   width: 45px;
   height: 45px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 `;
 
 const Title = styled.p`
  color: #ffffff;
  font-size: 15px;
- margin: 0 10px 0 -5px;
+ margin: 0 10px 0 0;
   @media (max-width: 500px){
     font-size: 11px;
-    
   }
 `;
 
-const HeaderCOnt = styled.div`
+const HeaderServices = styled.div`
   display: flex;
+`;
+
+const RatesImage= styled.img`
+  width: 23px;
+  height: 23px;
 `;
 
 const Header = () => {
   return (
     <HeaderContainer>
       <HeaderWrapper>
-        <HeaderCOnt>
+        <HeaderServices>
           <Logo>
             <LogoImage>
               <Img src={ logo } alt=""/>
@@ -239,7 +263,7 @@ const Header = () => {
           </Dota>
           <Bonuses>
             <BonusesWrapper>
-              <BonusesIcon/>
+              <BonusesImage src={bonuses}/>
             </BonusesWrapper>
             <ContainerInfo>
               <BonusesTitle>
@@ -252,7 +276,7 @@ const Header = () => {
           </Bonuses>
           <Intuition>
             <IntuitionWrapper>
-              <IntuitionIcon/>
+              <IntuitionImage src={intuition}/>
             </IntuitionWrapper>
             <ContainerInfo>
               <IntuitionTitle>
@@ -263,12 +287,12 @@ const Header = () => {
               </IntuitionText>
             </ContainerInfo>
           </Intuition>
-        </HeaderCOnt>
+        </HeaderServices>
         <UserContainer>
           <Rates>
-            <Wrapper>
-              <RatesIcon/>
-            </Wrapper>
+            <WrapperRates>
+              <RatesImage src={rates}/>
+            </WrapperRates>
             <Title>
               Мои ставки
             </Title>

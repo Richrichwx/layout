@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SupportIcon } from '../../ui/icons/SupportIcon';
 import { SocialIconsSteam, SocialIconsTelegram, SocialIconsVk } from '../../ui/icons/SocialIcons';
+import support from '../../assets/support.svg';
 
 const NavbarContainer = styled.div`
   width: 100%;
@@ -26,6 +26,19 @@ const Support = styled.div`
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
+   &:hover {
+     background: #0075f3;
+     width: 42px;
+     height: 42px;
+   }
+  align-items: center;
+  justify-content: center;
+  display: flex;
+`;
+
+const SupportImage= styled.img`
+  width: 22px;
+  height: 22px;
 `;
 
 const Menu = styled.div`
@@ -48,14 +61,27 @@ const Wrapper = styled.div`
   }
 `;
 const Social = styled.div`
-  cursor: pointer;
-  width: 100px;
   display: flex;
+  &:hover {
+    svg {
+      fill: #1b2129;
+      cursor: pointer;
+    }
+  }
 `;
 
 const WrapperMenu = styled.div`
   display: flex;
-    align-items: center;
+  align-items: center;
+`;
+
+const SupportWrapper = styled.div`
+  width: 50px;
+  height: 50px;
+`;
+
+const SocialWrapper = styled.div`
+  display: flex;
 `;
 
 function Navbar() {
@@ -63,9 +89,12 @@ function Navbar() {
     <NavbarContainer>
       <NavbarWrapper>
         <WrapperMenu>
-        <Support>
-          <SupportIcon/>
-        </Support>
+          <SupportWrapper>
+            <Support>
+              <SupportImage src={support}/>
+            </Support>
+          </SupportWrapper>
+
         <Menu>
           <Wrapper>
             <a href="">Ставки</a>
@@ -87,11 +116,17 @@ function Navbar() {
           </Wrapper>
         </Menu>
         </WrapperMenu>
-        <Social>
-          <SocialIconsTelegram/>
-          <SocialIconsSteam/>
-          <SocialIconsVk/>
-        </Social>
+        <SocialWrapper>
+          <Social>
+            <SocialIconsTelegram/>
+          </Social>
+          <Social>
+            <SocialIconsSteam/>
+          </Social>
+          <Social>
+            <SocialIconsVk/>
+          </Social>
+        </SocialWrapper>
       </NavbarWrapper>
     </NavbarContainer>
   );
