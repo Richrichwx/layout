@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { SocialIconsSteam, SocialIconsTelegram, SocialIconsVk } from '../../ui/icons/SocialIcons';
 import support from '../../assets/support.svg';
 
+import { Dropdown } from '../../ui/DropDown';
+
+import worldIcon from '../../assets/world.svg';
+
 const NavbarContainer = styled.div`
   width: 100%;
   background: #ffffff;
@@ -84,6 +88,48 @@ const SocialWrapper = styled.div`
   display: flex;
 `;
 
+const BarRight = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const DropdownBlock = styled.div`
+  padding-left: 30px;
+`;
+
+const languages = [
+  {
+    title: 'EN',
+    icon: 'https://betscsgo.gg/images/lang_flags/en.png',
+    value: 'en'
+  },
+  {
+    title: 'RU',
+    icon: 'https://betscsgo.gg/images/lang_flags/ru.png',
+    value: 'ru'
+  },
+  {
+    title: 'DE',
+    icon: 'https://betscsgo.gg/images/lang_flags/de.png',
+    value: 'de'
+  }
+];
+
+const times = [
+  {
+    title: '8:44',
+    value: 'en',
+  },
+  {
+    title: '10:00',
+    value: 'ru',
+  },
+  {
+    title: '21:00',
+    value: 'de',
+  }
+];
+
 function Navbar() {
   return (
     <NavbarContainer>
@@ -116,17 +162,19 @@ function Navbar() {
           </Wrapper>
         </Menu>
         </WrapperMenu>
-        <SocialWrapper>
+        <BarRight>
           <Social>
             <SocialIconsTelegram/>
-          </Social>
-          <Social>
             <SocialIconsSteam/>
-          </Social>
-          <Social>
             <SocialIconsVk/>
           </Social>
-        </SocialWrapper>
+          <DropdownBlock>
+            <Dropdown items={times} icon={worldIcon} />
+          </DropdownBlock>
+          <DropdownBlock>
+            <Dropdown items={languages} />
+          </DropdownBlock>
+        </BarRight>
       </NavbarWrapper>
     </NavbarContainer>
   );
