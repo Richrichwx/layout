@@ -31,6 +31,9 @@ const Item = styled.div`
   border-bottom: ${props => props.dropOpen ? '2px solid #f1f3f6' : '1px solid #e8ebf5'};
   &:nth-last-child(1) {
     border-bottom: ${props => props.dropOpen ? '2px solid #f1f3f6' : 'none'};
+    border-top: ${props => props.dropOpen ? '2px solid #f1f3f6' : '2px solid transparent'};
+    border-left: ${props => props.dropOpen ? '2px solid #f1f3f6' : '2px solid transparent'};
+    border-right: ${props => props.dropOpen ? '2px solid #f1f3f6' : '2px solid transparent'};
   }
   &:hover {
     cursor: pointer;
