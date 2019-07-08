@@ -11,7 +11,6 @@ const NavbarContainer = styled.div`
   width: 100%;
   background: #ffffff;
   height: 90px;
-  margin-top: 1px;
 `;
 
 const NavbarWrapper = styled.div`

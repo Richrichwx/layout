@@ -18,8 +18,9 @@ const HeaderWrapper = styled.div`
   padding: 0 38px;
   display: flex;
   justify-content: space-between;
-   @media (max-width: 600px){
-   padding: 0 30px;
+  border-bottom: 1px solid #eff2f5;
+  @media (max-width: 600px){
+    padding: 0 30px;
   }
 `;
 
@@ -28,8 +29,7 @@ const Logo = styled.div`
   align-items: center;
   height: 90px;
   padding: 0 30px;
-  border-bottom: 2px solid #eaeef1;
-    @media (max-width: 600px){
+  @media (max-width: 600px){
    padding: 0;
   }
 `;
@@ -59,7 +59,7 @@ const LogoText = styled.div`
 const Dota = styled.div`
   background: #2f3647;
   width: 90px;
-  height: 91px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,13 +82,21 @@ const Bonuses = styled.div`
   align-items: center;
   justify-content: center;
   height: 90px;
-  border-right: 2px solid #eaeef1;
-  border-bottom: 2px solid #eaeef1;
+  border-right: 1px solid #eaeef1;
+  
   &:hover {
-    border-bottom: 2px solid #2db2f0;
+    &:after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      background: #2db2f0;
+      bottom: 0;
+    }
   }
   cursor: pointer;
   min-width: 206px;
+  position: relative;
   @media (max-width: 1389px){
     flex-direction: column;
     padding: 0;
@@ -142,13 +150,21 @@ const Intuition = styled.div`
   align-items: center;
   justify-content: center;
   height: 90px;
-  border-right: 2px solid #eaeef1;
-  border-bottom: 2px solid #eaeef1;
+  border-right: 1px solid #eaeef1;
+  
   &:hover {
-    border-bottom: 2px solid #0656f9;
+    &:after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      background: #0656f9;
+      bottom: 0;
+    }
   }
   cursor: pointer;
   min-width: 206px;
+  position: relative;
   @media (max-width: 1389px){
     flex-direction: column;
     padding: 0;
@@ -210,7 +226,6 @@ const Rates = styled.div`
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid #eaeef1;
   &:hover {
     background: #333f51;
   }
