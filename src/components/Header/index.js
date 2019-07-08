@@ -17,6 +17,10 @@ const HeaderContainer = styled.div`
 const HeaderWrapper = styled.div`
   padding: 0 38px;
   display: flex;
+  justify-content: space-between;
+   @media (max-width: 600px){
+   padding: 0 30px;
+  }
 `;
 
 const Logo = styled.div`
@@ -24,7 +28,10 @@ const Logo = styled.div`
   align-items: center;
   height: 90px;
   padding: 0 30px;
-   border-bottom: 2px solid #eaeef1;
+  border-bottom: 2px solid #eaeef1;
+    @media (max-width: 600px){
+   padding: 0;
+  }
 `;
 
 const LogoImage = styled.div`
@@ -35,12 +42,18 @@ const Img = styled.img`
   width: 40px;
   height: 40px;
   margin-right: 16px;
+   @media (max-width: 600px){
+   margin: 0;
+  }
 `;
 
 const LogoText = styled.div`
   font-family: Averta-ExtraBold;
   font-size: 25px;
   margin-top: 3px;
+   @media (max-width: 717px){
+    display: none;
+  }
 `;
 
 const Dota = styled.div`
@@ -57,6 +70,10 @@ const Dota = styled.div`
       fill: rgb(255, 60, 0);
     }
   }
+  min-width: 90px;
+   @media (max-width: 800px){
+    display: none;
+  }
 `;
 
 const Bonuses = styled.div`
@@ -65,13 +82,21 @@ const Bonuses = styled.div`
   align-items: center;
   justify-content: center;
   height: 90px;
-  width: 206px;
   border-right: 2px solid #eaeef1;
   border-bottom: 2px solid #eaeef1;
   &:hover {
     border-bottom: 2px solid #2db2f0;
   }
   cursor: pointer;
+  min-width: 206px;
+  @media (max-width: 1389px){
+    flex-direction: column;
+    padding: 0;
+    min-width: 160px;
+  }
+    @media (max-width: 1100px){
+    display: none;
+  }
 `;
 
 const BonusesWrapper = styled.div`
@@ -80,9 +105,15 @@ const BonusesWrapper = styled.div`
   background: #2db2f0;
   border-radius: 50%;
   margin-right: 16px;
+  @media (max-width: 1389px){
+   margin: 0;
+  }
 `;
 
 const ContainerInfo = styled.div`
+  @media (max-width: 1389px){
+    text-align: center;
+  }
 `;
 
 const BonusesTitle = styled.div`
@@ -103,13 +134,21 @@ const Intuition = styled.div`
   align-items: center;
   justify-content: center;
   height: 90px;
-  width: 201px;
   border-right: 2px solid #eaeef1;
   border-bottom: 2px solid #eaeef1;
   &:hover {
     border-bottom: 2px solid #0656f9;
   }
   cursor: pointer;
+  min-width: 206px;
+  @media (max-width: 1389px){
+    flex-direction: column;
+    padding: 0;
+    min-width: 160px;
+  }
+   @media (max-width: 1100px){
+    display: none;
+  }
 `;
 const IntuitionWrapper = styled.div`
   width: 45px;
@@ -117,6 +156,9 @@ const IntuitionWrapper = styled.div`
   background: #2db2f0;
   border-radius: 50%;
   margin-right: 16px;
+  @media (max-width: 1389px){
+   margin: 0;
+  }
 `;
 
 const IntuitionTitle = styled.div`
@@ -132,10 +174,13 @@ const IntuitionText = styled.div`
 `;
 
 const UserContainer = styled.div`
-  margin-left: 200px;
+  padding: 0 30px;
   height: 90px;
   display: flex;
   align-items: center;
+  @media (max-width: 600px){
+    padding: 0;
+  }
 `;
 
 const Rates = styled.div`
@@ -148,74 +193,87 @@ const Rates = styled.div`
   cursor: pointer;
   justify-content: center;
   align-items: center;
-   border-bottom: 2px solid #eaeef1;
-   &:hover {
+  border-bottom: 2px solid #eaeef1;
+  &:hover {
     background: #333f51;
-   }
+  }
+   @media (max-width: 500px){
+    height: 35px;
+     width: 120px;
+  }
 `;
 const Wrapper = styled.div`
   width: 45px;
   height: 45px;
-
 `;
 
 const Title = styled.p`
  color: #ffffff;
  font-size: 15px;
  margin: 0 10px 0 -5px;
+  @media (max-width: 500px){
+    font-size: 11px;
+    
+  }
+`;
+
+const HeaderCOnt = styled.div`
+  display: flex;
 `;
 
 const Header = () => {
   return (
     <HeaderContainer>
       <HeaderWrapper>
-        <Logo>
-          <LogoImage>
-            <Img src={ logo } alt=""/>
-          </LogoImage>
-          <LogoText>
-            CSGO.bet
-          </LogoText>
-        </Logo>
-        <Dota>
-          <DotaIcon/>
-        </Dota>
-        <Bonuses>
-          <BonusesWrapper>
-            <BonusesIcon/>
-          </BonusesWrapper>
-          <ContainerInfo>
-            <BonusesTitle>
-              Бонусы
-            </BonusesTitle>
-            <BonusesText>
-              Ежедневные раздачи
-            </BonusesText>
-          </ContainerInfo>
-        </Bonuses>
-        <Intuition>
-          <IntuitionWrapper>
-            <IntuitionIcon/>
-          </IntuitionWrapper>
-          <ContainerInfo>
-            <IntuitionTitle>
-              Интуиция
-            </IntuitionTitle>
-            <IntuitionText>
-              Угадывай событие
-            </IntuitionText>
-          </ContainerInfo>
-        </Intuition>
+        <HeaderCOnt>
+          <Logo>
+            <LogoImage>
+              <Img src={ logo } alt=""/>
+            </LogoImage>
+            <LogoText>
+              CSGO.bet
+            </LogoText>
+          </Logo>
+          <Dota>
+            <DotaIcon/>
+          </Dota>
+          <Bonuses>
+            <BonusesWrapper>
+              <BonusesIcon/>
+            </BonusesWrapper>
+            <ContainerInfo>
+              <BonusesTitle>
+                Бонусы
+              </BonusesTitle>
+              <BonusesText>
+                Ежедневные раздачи
+              </BonusesText>
+            </ContainerInfo>
+          </Bonuses>
+          <Intuition>
+            <IntuitionWrapper>
+              <IntuitionIcon/>
+            </IntuitionWrapper>
+            <ContainerInfo>
+              <IntuitionTitle>
+                Интуиция
+              </IntuitionTitle>
+              <IntuitionText>
+                Угадывай событие
+              </IntuitionText>
+            </ContainerInfo>
+          </Intuition>
+        </HeaderCOnt>
         <UserContainer>
           <Rates>
             <Wrapper>
               <RatesIcon/>
             </Wrapper>
             <Title>
-              Мои  ставки
+              Мои ставки
             </Title>
           </Rates>
-          <User />
+          <User/>
         </UserContainer>
       </HeaderWrapper>
       <Navbar/>

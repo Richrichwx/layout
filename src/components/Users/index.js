@@ -21,10 +21,15 @@ const Img = styled.img`
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  @media (max-width: 500px){
+    width: 45px;
+    height: 45px;
+  }
 `;
 
 const Userinfo= styled.div`
   margin-left: 10px;
+  width: 122px;
 `;
 
 const UserName= styled.div`
@@ -32,12 +37,19 @@ const UserName= styled.div`
   color: #27303b;
   font-weight: bold;
   margin-bottom: 10px;
+   @media (max-width: 500px){
+    font-size: 12px;
+    margin: 5px 0 5px 0;
+  }
 `;
 
 const Money= styled.div`
   font-size: 19px;
   color: #17c06d;
   font-weight: bold;
+   @media (max-width: 500px){
+    font-size: 12px;
+  }
 `;
 
 const Deposit= styled.div`
@@ -45,11 +57,14 @@ const Deposit= styled.div`
   height: 45px;
   background: #17c06d;
   border-radius: 50%;
-  margin-left: 50px;
+  margin:3px 0 0 50px;
   cursor: pointer;
    &:hover {
       background: #68f1ad;
-    }
+   }
+   @media (max-width: 1200px){
+    margin-left: 10px;
+  }
 `;
 
 const LoginFalse = styled.div`

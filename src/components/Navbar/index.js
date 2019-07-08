@@ -15,7 +15,7 @@ const NavbarWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 90px;
-  }
+  justify-content: space-between;
 `;
 
 const Support = styled.div`
@@ -31,6 +31,7 @@ const Support = styled.div`
 const Menu = styled.div`
   display: flex;
   list-style: none;
+  width: 867px;
 `;
 
 const Wrapper = styled.div`
@@ -47,20 +48,21 @@ const Wrapper = styled.div`
   }
 `;
 const Social = styled.div`
-  margin-left: 280px;
   cursor: pointer;
-   @media (max-width: 600px) {
-     height: 120px;
-     padding; 0;
-     margin: 10px 10px 0 0 ;
-     display: flex;
-  }
+  width: 100px;
+  display: flex;
+`;
+
+const WrapperMenu = styled.div`
+  display: flex;
+    align-items: center;
 `;
 
 function Navbar() {
   return (
     <NavbarContainer>
       <NavbarWrapper>
+        <WrapperMenu>
         <Support>
           <SupportIcon/>
         </Support>
@@ -84,6 +86,7 @@ function Navbar() {
             <a href="">Как это работает?</a>
           </Wrapper>
         </Menu>
+        </WrapperMenu>
         <Social>
           <SocialIconsTelegram/>
           <SocialIconsSteam/>
