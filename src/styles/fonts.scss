@@ -41,3 +41,23 @@ $font-path: 'styles/fonts';
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Muller_Bold";
+  src: url("#{$font-path}/Muller/MullerBold.eot?") format("eot");
+  src: url('#{$font-path}/Muller/MullerBold.eot?#iefix') format('embedded-opentype'),
+  url("#{$font-path}/Muller/MullerBold.woff") format("woff"),
+  url("#{$font-path}/Muller/MullerBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Muller_Regular";
+  src: url("#{$font-path}/Muller/MullerRegular.eot?") format("eot");
+  src: url('#{$font-path}/Muller/MullerRegular.eot?#iefix') format('embedded-opentype'),
+  url("#{$font-path}/Muller/MullerRegular.woff") format("woff"),
+  url("#{$font-path}/Muller/MullerRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
