@@ -1,37 +1,5 @@
 $font-path: 'styles/fonts';
 
-//@font-face {
-//  font-family: "Averta Bold";
-//  src: url("#{$font-path}/Averta Bold.otf?") format("eot");
-//  src: url('#{$font-path}/Averta Bold.otf?#iefix') format('embedded-opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: "Averta Extra Bold";
-//  src: url("#{$font-path}/Averta Extra Bold.otf?") format("eot");
-//  src: url('#{$font-path}/Averta Extra Bold.otf?#iefix') format('embedded-opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-//
-//@font-face {
-//  font-family: "MullerBold";
-//  src: url("#{$font-path}/Muller_Font/MullerBold.otf?") format("eot");
-//  src: url('#{$font-path}/Muller_Font/MullerBold.otf?#iefix') format('embedded-opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-
-//@font-face {
-//  font-family: "Muller Med";
-//  src: url("#{$font-path}/MullerMedium.otf?") format("eot");
-//  src: url('#{$font-path}/MullerMedium.otf?#iefix') format('embedded-opentype');
-//  font-weight: normal;
-//  font-style: normal;
-//}
-
 @font-face {
   font-family: "Muller_Med";
   src: url("#{$font-path}/Muller/MullerMedium.eot?") format("eot");
@@ -58,6 +26,13 @@ $font-path: 'styles/fonts';
   src: url('#{$font-path}/Muller/MullerRegular.eot?#iefix') format('embedded-opentype'),
   url("#{$font-path}/Muller/MullerRegular.woff") format("woff"),
   url("#{$font-path}/Muller/MullerRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Averta Extra Bold";
+  src: url("#{$font-path}/Averta Extra Bold.otf?") format("otf");
   font-weight: normal;
   font-style: normal;
 }

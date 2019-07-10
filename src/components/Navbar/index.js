@@ -1,16 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SocialIconsSteam, SocialIconsTelegram, SocialIconsVk } from '../../ui/icons/SocialIcons';
+
 import support from '../../assets/support.svg';
+import worldIcon from '../../assets/world.svg';
+
+import { SocialIconsSteam, SocialIconsTelegram, SocialIconsVk } from '../../ui/icons/SocialIcons';
 
 import { Dropdown } from '../../ui/DropDown';
 
-import worldIcon from '../../assets/world.svg';
+import { languages } from '../../mocks/languages';
+import { times } from '../../mocks/times';
 
 const NavbarContainer = styled.div`
   width: 100%;
   background: #ffffff;
   height: 90px;
+  @media (max-width: 640px) {
+    display: none;
+  }
 `;
 
 const NavbarWrapper = styled.div`
@@ -19,6 +26,9 @@ const NavbarWrapper = styled.div`
   align-items: center;
   height: 90px;
   justify-content: space-between;
+  @media (max-width: 860px) {
+    padding: 0 10px;
+  }
 `;
 
 const Support = styled.div`
@@ -47,16 +57,22 @@ const SupportImage= styled.img`
 const Menu = styled.div`
   display: flex;
   list-style: none;
-  width: 867px;
+  width: 100%;
 `;
 
 const Wrapper = styled.div`
-  padding: 0 25px 0  25px;
+  padding: 0 25px;
+  @media (max-width: 1300px) {
+    padding: 0 14px;
+  }
   a {
     color: #4c5768;
     font-size: 16px;
     text-decoration: none;
-    font-weight: bold;
+    font-family: Muller_Bold, sans-serif;
+    @media (max-width: 860px) {
+      font-size: 11px;
+    }
     &:hover {
       border-bottom: 2px solid #0656f9;
     }
@@ -80,11 +96,7 @@ const WrapperMenu = styled.div`
 
 const SupportWrapper = styled.div`
   width: 50px;
-  height: 50px;
-`;
-
-const SocialWrapper = styled.div`
-  display: flex;
+  height: 40px;
 `;
 
 const BarRight = styled.div`
@@ -94,40 +106,10 @@ const BarRight = styled.div`
 
 const DropdownBlock = styled.div`
   padding-left: 30px;
+  @media (max-width: 1100px) {
+    display: none;
+  }
 `;
-
-const languages = [
-  {
-    title: 'EN',
-    icon: 'https://betscsgo.gg/images/lang_flags/en.png',
-    value: 'en'
-  },
-  {
-    title: 'RU',
-    icon: 'https://betscsgo.gg/images/lang_flags/ru.png',
-    value: 'ru'
-  },
-  {
-    title: 'DE',
-    icon: 'https://betscsgo.gg/images/lang_flags/de.png',
-    value: 'de'
-  }
-];
-
-const times = [
-  {
-    title: '8:44',
-    value: 'en',
-  },
-  {
-    title: '10:00',
-    value: 'ru',
-  },
-  {
-    title: '21:00',
-    value: 'de',
-  }
-];
 
 function Navbar() {
   return (
@@ -141,22 +123,22 @@ function Navbar() {
           </SupportWrapper>
         <Menu>
           <Wrapper>
-            <a href="">Ставки</a>
+            <a href="/#">Ставки</a>
           </Wrapper>
           <Wrapper>
-            <a href="">Новости</a>
+            <a href="/#">Новости</a>
           </Wrapper>
           <Wrapper>
-            <a href="">Рейтинги</a>
+            <a href="/#">Рейтинги</a>
           </Wrapper>
           <Wrapper>
-            <a href="">Скидки</a>
+            <a href="/#">Скидки</a>
           </Wrapper>
           <Wrapper>
-            <a href="">Техподдержка</a>
+            <a href="/#">Техподдержка</a>
           </Wrapper>
           <Wrapper>
-            <a href="">Как это работает?</a>
+            <a href="/#">Как это работает?</a>
           </Wrapper>
         </Menu>
         </WrapperMenu>

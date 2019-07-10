@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import avatar from '../../assets/avatar.png';
 import add from '../../assets/add.svg';
+
 import { SocialIconsSteamUser } from '../../ui/icons/SocialIcons';
+import { MenuDropdown } from '../../ui/DropDown/MenuDropDown';
 
 const UserContainer = styled.div`
  margin-left: 25px;
@@ -36,9 +39,9 @@ const Userinfo= styled.div`
 const UserName= styled.div`
   font-size: 16px;
   color: #27303b;
-  font-weight: bold;
+  font-family: Muller_Med, open-sans;
   margin-bottom: 10px;
-   @media (max-width: 500px){
+  @media (max-width: 500px){
     font-size: 12px;
     margin: 5px 0 5px 0;
   }
@@ -47,8 +50,8 @@ const UserName= styled.div`
 const Money= styled.div`
   font-size: 19px;
   color: #17c06d;
-  font-weight: bold;
-   @media (max-width: 500px){
+  font-family: Muller_Med, open-sans;
+  @media (max-width: 500px){
     font-size: 12px;
   }
 `;
@@ -112,7 +115,8 @@ const LogOutSteamText= styled.div`
 
 
 function User() {
-  let login = true;
+  const login = true;
+
   return (
     <UserContainer>
       {login ? (
@@ -131,6 +135,7 @@ function User() {
           <Deposit>
             <MoneyImage src={add}/>
           </Deposit>
+          <MenuDropdown />
         </LoginTrue>
       ) : (
         <LoginFalse>

@@ -1,12 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import logo from '../../assets/logo.png';
 import bonuses from '../../assets/bonuses.svg';
 import intuition from '../../assets/intuition.svg';
 import rates from '../../assets/rates.svg';
+
 import { DotaIcon } from '../../ui/icons/DotaIcon';
+import { Dropdown } from '../../ui/DropDown';
+import { NavDropdown } from '../../ui/DropDown/NavDropDown';
+
 import Navbar from '../Navbar';
 import User from '../Users';
+
+import { languages } from '../../mocks/languages';
 
 const HeaderContainer = styled.div`
  width: 100%;
@@ -19,8 +26,17 @@ const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #eff2f5;
-  @media (max-width: 600px){
-    padding: 0 30px;
+  align-items: center;
+  @media (max-width: 860px) {
+    padding: 0 15px;
+  }
+`;
+
+const DropdownBlock = styled.div`
+  padding-left: 30px;
+  display: none;
+  @media (max-width: 1100px) {
+    display: block !important;
   }
 `;
 
@@ -29,8 +45,8 @@ const Logo = styled.div`
   align-items: center;
   height: 90px;
   padding: 0 30px;
-  @media (max-width: 600px){
-   padding: 0;
+  @media (max-width: 860px){
+   padding-left: 0;
   }
 `;
 
@@ -48,10 +64,11 @@ const Img = styled.img`
 `;
 
 const LogoText = styled.div`
-  font-family: Averta-ExtraBold;
+  font-family: Averta Extra Bold, sans-serif;
+  font-weight: bold;
   font-size: 25px;
   margin-top: 3px;
-   @media (max-width: 717px){
+  @media (max-width: 717px){
     display: none;
   }
 `;
@@ -102,7 +119,7 @@ const Bonuses = styled.div`
     padding: 0;
     min-width: 160px;
   }
-    @media (max-width: 1100px){
+  @media (max-width: 1200px){
     display: none;
   }
 `;
@@ -130,13 +147,13 @@ const ContainerInfo = styled.div`
 const BonusesTitle = styled.div`
   font-size: 16px;
   color: #2db2f0;
-  font-family; "MullerBold", sans-serif;
-  font-weight: bold;
+  font-family: Muller_Bold, sans-serif;
 `;
 
 const BonusesText = styled.div`
   font-size: 14px;
   color: #92cfec;
+  font-family: Muller_Regular, sans-serif;
 `;
 
 const BonusesImage = styled.img`
@@ -165,12 +182,12 @@ const Intuition = styled.div`
   cursor: pointer;
   min-width: 206px;
   position: relative;
-  @media (max-width: 1389px){
+  @media (max-width: 1389px) {
     flex-direction: column;
     padding: 0;
     min-width: 160px;
   }
-   @media (max-width: 1100px){
+  @media (max-width: 1200px) {
     display: none;
   }
 `;
@@ -191,13 +208,13 @@ const IntuitionWrapper = styled.div`
 const IntuitionTitle = styled.div`
   font-size: 16px;
   color: #0656f9;
-  font-family; "MullerBold", sans-serif;
-  font-weight: bold;
+  font-family: Muller_Bold, sans-serif;
 `;
 
 const IntuitionText = styled.div`
   font-size: 14px;
   color: #729dff;
+  font-family: Muller_Regular, sans-serif;
 `;
 
 
@@ -211,8 +228,8 @@ const UserContainer = styled.div`
   height: 90px;
   display: flex;
   align-items: center;
-  @media (max-width: 600px){
-    padding: 0;
+  @media (max-width: 860px){
+    padding-right: 0;
   }
 `;
 
@@ -233,6 +250,9 @@ const Rates = styled.div`
     height: 35px;
      width: 120px;
   }
+  @media (max-width: 1100px) {
+    display: none;
+  }
 `;
 const WrapperRates = styled.div`
   width: 45px;
@@ -243,12 +263,10 @@ const WrapperRates = styled.div`
 `;
 
 const Title = styled.p`
- color: #ffffff;
- font-size: 15px;
- margin: 0 10px 0 0;
-  @media (max-width: 500px){
-    font-size: 11px;
-  }
+  color: #ffffff;
+  font-size: 15px;
+  font-family: Muller_Med, open-sans;
+  margin: 0 10px 0 0;
 `;
 
 const HeaderServices = styled.div`
@@ -260,6 +278,13 @@ const RatesImage= styled.img`
   height: 23px;
 `;
 
+const NavBarMenu = styled.div`
+  display: none;
+  @media (max-width: 640px) {
+    display: block;
+  }
+`;
+
 const Header = () => {
   return (
     <HeaderContainer>
@@ -269,6 +294,9 @@ const Header = () => {
             <LogoImage>
               <Img src={ logo } alt=""/>
             </LogoImage>
+            <NavBarMenu>
+              <NavDropdown />
+            </NavBarMenu>
             <LogoText>
               CSGO.bet
             </LogoText>
@@ -304,6 +332,9 @@ const Header = () => {
           </Intuition>
         </HeaderServices>
         <UserContainer>
+          <DropdownBlock>
+            <Dropdown items={languages} />
+          </DropdownBlock>
           <Rates>
             <WrapperRates>
               <RatesImage src={rates}/>

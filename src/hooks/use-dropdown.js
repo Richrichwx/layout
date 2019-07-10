@@ -1,8 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
 export default function useDropdown(dropEl, actionEl) {
-  dropEl = dropEl.current;
-  actionEl = actionEl.current;
 
   const [drop, setDrop] = useState(true);
 
@@ -15,12 +13,8 @@ export default function useDropdown(dropEl, actionEl) {
 
   const onWindowClick = useCallback(
     ev => {
-      const clickOnAction =
-        actionEl && (ev.target === actionEl || actionEl.contains(ev.target));
-      const clickOnDrop =
-        dropEl && (ev.target === dropEl || dropEl.contains(ev.target));
 
-      if (!clickOnAction && !clickOnDrop && drop === true) {
+      if (!drop) {
         toggleDrop(true);
       }
     },
@@ -30,7 +24,7 @@ export default function useDropdown(dropEl, actionEl) {
   const onEsc = useCallback(
     ev => {
       if (ev.keyCode === 27 && drop === true) {
-        toggleDrop(false);
+        toggleDrop(true);
       }
     },
     [drop]
